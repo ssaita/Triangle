@@ -21,9 +21,14 @@ extern int iprz;
 extern int ipri;
 extern int iprc;
 
+// cooduz.f
+extern double ax[20*2],bx[12*2];
+extern int ix[12*5];
+
 // triangx.f(main),filioz.f(dread0)
 extern int nfc,norder,nv,nu,nz;
 extern float deca;
+
 ///extern float r(iprz),rc(iprz),deca
 extern double pi;
 #endif /* paramt_h */

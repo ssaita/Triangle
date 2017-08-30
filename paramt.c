@@ -21,3 +21,6 @@ int ipri=8;
 int iprc=4;
 
 double pi=3.141592;
+
+double ax[20*2],bx[12*2];
+int ix[12*5];

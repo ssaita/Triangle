@@ -8,14 +8,14 @@
 #include <stdio.h>
 #include <math.h>
 #include "paramt.h"
-double pentax();
-int main(){
-    pentax();
-}
-double pentax(){
-    double ax[20*2];//1次元配列で多次元配列を表現する.
-    double bx[12*2];//1次元配列で多次元配列を表現する.
-    int ix[12*5];//1次元配列で多次元配列を表現する.
+//double pentax(double *ax,double *bx,int *ix);
+//int main(){
+//    pentax(ax,bx,ix);
+//}
+double pentax(double *ax,double *bx,int *ix){
+//    double ax[20*2];//1次元配列で多次元配列を表現する.
+//    double bx[12*2];//1次元配列で多次元配列を表現する.
+//    int ix[12*5];//1次元配列で多次元配列を表現する.
     int i,j;
     double te1,te2,a,b,c,d,r,r1,fi,fi0,fi1,fi2,fi3;
     FILE *fp1,*fp2,*fp3;
