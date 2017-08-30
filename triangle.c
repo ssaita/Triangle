@@ -8,18 +8,18 @@
 #include <stdio.h>
 #include <math.h>
 #include "paramt.h"
-void triangle(int itest, double *ax,double *bx,int *ix,double apex[iprv][2], int icon[iprv][6],int *isn);
+void triangle(int itest, double *ax,double *bx,int *ix, double *apex, int *icon,int *isn);
 
 int main(){
     int itest=0;
-    double apex[iprv][2];
-    int icon[iprv][6],isn[iprv*3];
+    double apex[iprv*2];
+    int icon[iprv*6],isn[iprv*3];
     triangle(itest, ax,bx,ix,apex,icon,isn);
     
 }
 
 
-void triangle(int itest, double *ax,double *bx,int *ix,double apex[iprv][2], int icon[iprv][6],int *isn){
+void triangle(int itest, double *ax,double *bx,int *ix, double *apex, int *icon,int *isn){
 //    double apex1[iprv][2],icon1[iprv,6],isn[iprv][3];
     int i,j;
     int knewax[20],knewcx[12];
@@ -47,15 +47,15 @@ void triangle(int itest, double *ax,double *bx,int *ix,double apex[iprv][2], int
     knewcx[0]=1;
     knewcx[11]=12+20;
     for(j=0;j<12;j++){
-        apex[knewcx[j]][0]=bx[j];
-        apex[knewcx[j]][1]=bx[j+12];
+        apex[knewcx[j]]=bx[j];
+        apex[knewcx[j]+iprv]=bx[j+12];
         for(i=0;i<5;i++){
-            icon[knewcx[j]][i]=knewax[ix[j*5+i]];
+            icon[knewcx[j]+iprv*i]=knewax[ix[j*5+i]];
             isn[knewcx[j]]=j;
             isn[knewcx[j]+iprv]=0;
             isn[knewcx[j]+iprv*2]=0;
         }
-        icon[knewcx[j]][5]=0;
+        icon[knewcx[j]+iprv*5]=0;
     }
     //C     2-6(apex 1-5)......................6 connection from 20 apex
     //C     12-21(apex 6-15)
